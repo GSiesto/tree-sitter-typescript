@@ -22,3 +22,9 @@ yarn.lock
 /typescript/Cargo.toml
 /typescript/binding.gyp
 /typescript/bindings
+
+# Python artifacts
+.venv/
+dist/
+*.egg-info
+*.whl

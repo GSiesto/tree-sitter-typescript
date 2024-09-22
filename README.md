@@ -5,6 +5,7 @@
 [![matrix][matrix]](https://matrix.to/#/#tree-sitter-chat:matrix.org)
 [![crates][crates]](https://crates.io/crates/tree-sitter-typescript)
 [![npm][npm]](https://www.npmjs.com/package/tree-sitter-typescript)
+[![pypi][pypi]](https://pypi.org/project/tree-sitter-xml/)
 
 TypeScript and TSX grammars for [tree-sitter][].
 
@@ -20,7 +21,35 @@ For Javascript files with [flow] type annotations you can use the the `tsx` pars
 [tree-sitter]: https://github.com/tree-sitter/tree-sitter
 [flow]: https://flow.org/en/
 
-References
+## Python usage
+
+The `tree-sitter` library is required for this package.
+
+```console
+pip install tree-sitter
+```
+
+First, install the package using pip:
+```console
+pip install .
+```
+
+This package allows you to load both TypeScript and TSX grammars as a Language object in Python. Here's how you can do it:
+
+```python
+import tree_sitter_typescript as tstypescript
+from tree_sitter import Language, Parser
+
+# Load TypeScript grammar
+TYPESCRIPT_LANGUAGE = Language(tstypescript.language_typescript(), "typescript")
+
+# Load TSX grammar
+TSX_LANGUAGE = Language(tstypescript.language_tsx(), "tsx")
+```
+
+For a practical example of how to use these grammars, please refer to the test file located at `bindings/python/tree_sitter_typescript/test.py`.
+
+## References
 
 - [TypeScript Language Spec](https://github.com/microsoft/TypeScript/blob/main/doc/spec-ARCHIVED.md)
 
@@ -29,3 +58,4 @@ References
 [matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&label=matrix
 [npm]: https://img.shields.io/npm/v/tree-sitter-typescript?logo=npm
 [crates]: https://img.shields.io/crates/v/tree-sitter-typescript?logo=rust
+[pypi]: https://img.shields.io/pypi/v/tree-sitter-typescript?logo=pypi&logoColor=ffd242
